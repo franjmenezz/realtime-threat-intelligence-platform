@@ -1,0 +1,69 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+venv/
+.venv/
+env/
+.env/
+*.pyc
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Spark
+/tmp/spark-*
+spark-warehouse/
+derby.log
+metastore_db/
+
+# Node / Next.js
+node_modules/
+.next/
+out/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Build outputs
+dist/
+build/
+
+# Testing
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Docker volumes
+postgres_data/
+
+# ML Models
+*.model
+*.pkl
+*.joblib
+/backend/models/
+
+# GeoIP database (download separately)
+*.mmdb
+
+# Logs
+*.log
+logs/
