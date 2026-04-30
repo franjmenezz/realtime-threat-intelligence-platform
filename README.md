@@ -18,6 +18,10 @@ Ingests IoC feeds from multiple OSINT sources, enriches them with geolocation an
 
 [Features](#-features) · [Architecture](#-architecture) · [Tech Stack](#-tech-stack) · [Quick Start](#-quick-start) · [API Docs](#-api-reference) · [Roadmap](#-roadmap)
 
+<br/>
+
+![Dashboard Preview](docs/assets/dashboard-preview.png)
+
 </div>
 
 ---
