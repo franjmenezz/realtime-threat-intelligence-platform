@@ -16,6 +16,10 @@ Ingesta feeds de IoCs desde múltiples fuentes OSINT, los enriquece con datos de
 
 [Características](#-características) · [Arquitectura](#-arquitectura) · [Tech Stack](#-tech-stack) · [Inicio rápido](#-inicio-rápido) · [API](#-referencia-api) · [Roadmap](#-roadmap)
 
+<br/>
+
+![Dashboard Preview](docs/assets/dashboard-preview.png)
+
 </div>
 
 ---
