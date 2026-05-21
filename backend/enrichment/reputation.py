@@ -54,7 +54,7 @@ def _fetch_abuseipdb(ip: str) -> Optional[dict]:
         response = httpx.get(
             "https://api.abuseipdb.com/api/v2/check",
             headers={"Key": api_key, "Accept": "application/json"},
-            params={"ipAddress": ip, "maxAgeInDays": 90},
+            params={"ipAddress": ip, "maxAgeInDays": 90, "verbose": True},
             timeout=5.0,
         )
         if response.status_code == 200:
@@ -64,9 +64,17 @@ def _fetch_abuseipdb(ip: str) -> Optional[dict]:
                 "vt_detections": None,
                 "vt_total":      None,
                 "is_tor":        data.get("isTor", False),
-                "is_vpn":        False,
-                "is_datacenter": False,
+                "is_vpn":        data.get("usageType", "") in (
+                                     "VPN Service", "Hosting/Data Center"
+                                 ),
+                "is_datacenter": data.get("usageType", "") == "Hosting/Data Center",
             }
+        elif response.status_code == 429:
+            logger.warning("abuseipdb_rate_limited", ip=ip)
+        else:
+            logger.warning("abuseipdb_unexpected_status",
+                           ip=ip, status=response.status_code)
+
     except Exception as exc:
         logger.debug("abuseipdb_fetch_failed", ip=ip, error=str(exc))
 
