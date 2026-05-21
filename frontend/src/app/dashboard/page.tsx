@@ -58,7 +58,7 @@ interface LiveItem {
   ioc_type:    string
   risk_level:  RiskLevel
   risk_score:  number
-  country_code:string
+  country_code:string | null
   ingested_at: number
 }
 
